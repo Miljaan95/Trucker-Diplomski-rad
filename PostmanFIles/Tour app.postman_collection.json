@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "8fd9b1f0-4480-40b6-9391-67f93da2bac4",
+		"name": "Tour app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users-Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\" : \"pera.lazic\",\r\n    \"Email\" : \"pera.lazic@gmail.com\",\r\n    \"Password\": \"Test.123\",\r\n    \"Role\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users-Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\" : \"pera.peric\",\r\n    \"Password\" : \"Test.123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/users/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"users",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users-Refresh-token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/users/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"users",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tours",
+			"item": [
+				{
+					"name": "Tours - Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjg4ODk2NzMsImV4cCI6MTYyODg5MDU3MywiaWF0IjoxNjI4ODg5NjczfQ.fr6LpauHGMRKAimPefZzGtA6YRvbpM0dnCywiSe_b1Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"From\" : \"Nis\",\r\n    \"To\" : \"Beograd\",\r\n    \"Price\" : 100,\r\n    \"Distance\" : 230,\r\n    \"Type\" : 1,\r\n    \"UserId\" : 2004,\r\n    \"dateCreated\": \"2021-08-13T21:31:12.977Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/createTour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"createTour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tours - GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjE1NDUsImV4cCI6MTYyOTgyMjQ0NSwiaWF0IjoxNjI5ODIxNTQ1fQ.gQilh4MTayXd263_fWMuy-pFnKisTsqd-e8YcwXBNTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/getTours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"getTours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tours - Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4Mzk0OTgsImV4cCI6MTYyOTg0MDM5OCwiaWF0IjoxNjI5ODM5NDk4fQ.c3h3pPIHUOJuF38N2TXHjfqPZgT9O-F12OwEu3KohvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : 3,\r\n    \"From\" : \"Nis\",\r\n    \"To\" : \"Beograd\",\r\n    \"Price\" : 105,\r\n    \"Distance\" : 230,\r\n    \"Type\" : 1,\r\n    \"UserId\" : 2004,\r\n    \"dateCreated\": \"2021-08-13T21:31:12.977Z\",\r\n    \"DriverId\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/updateTour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"updateTour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tours - Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjI1NjgsImV4cCI6MTYyOTgyMzQ2OCwiaWF0IjoxNjI5ODIyNTY4fQ.X8pA9S21JyR65XB09YpcU_GFyLP7euLMWiN2xGz6VLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/deleteTour/1002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"deleteTour",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tour - AssignDriver",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjI1NjgsImV4cCI6MTYyOTgyMzQ2OCwiaWF0IjoxNjI5ODIyNTY4fQ.X8pA9S21JyR65XB09YpcU_GFyLP7euLMWiN2xGz6VLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 3,\r\n    \"DriverId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/assignDriver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"assignDriver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tour - AssignLoad",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjI1NjgsImV4cCI6MTYyOTgyMzQ2OCwiaWF0IjoxNjI5ODIyNTY4fQ.X8pA9S21JyR65XB09YpcU_GFyLP7euLMWiN2xGz6VLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 3,\r\n    \"LoadId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/TourContoller/assignLoad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"TourContoller",
+								"assignLoad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loads",
+			"item": [
+				{
+					"name": "Load - Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4Mzk5MDcsImV4cCI6MTYyOTg0MDgwNywiaWF0IjoxNjI5ODM5OTA3fQ.gqSX4PcocbKA-ubitqsusH-DFgVom3cGbw9II-Yq5Yk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Weight\": 20,\r\n    \"Height\": 20,\r\n    \"Width\": 20,\r\n    \"Length\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/Load/createLoad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Load",
+								"createLoad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Review - Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2MzAwODgyMTMsImV4cCI6MTYzMDA4OTExMywiaWF0IjoxNjMwMDg4MjEzfQ.99VVMayPmtixY7-ne_1tzUDbMch1TOg4-6l2uibuwpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Comment\": \"Odlicno odradjen posao\", \r\n    \"Rate\": 4.5, \r\n    \"DateCreated\": \"2021-08-13T21:31:12.977Z\",\r\n    \"DriverId\": 2, \r\n    \"UserId\": 2004, \r\n    \"TourId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/Review/createReview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Review",
+								"createReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review - Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2MzAwODgyMTMsImV4cCI6MTYzMDA4OTExMywiaWF0IjoxNjMwMDg4MjEzfQ.99VVMayPmtixY7-ne_1tzUDbMch1TOg4-6l2uibuwpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"Comment\": \"Odlicno odradjen posao\", \r\n    \"Rate\": 5, \r\n    \"DateCreated\": \"2021-08-13T21:31:12.977Z\",\r\n    \"DriverId\": 2, \r\n    \"UserId\": 2004, \r\n    \"TourId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/Review/updateReview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Review",
+								"updateReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review - Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2MzAwODgyMTMsImV4cCI6MTYzMDA4OTExMywiaWF0IjoxNjMwMDg4MjEzfQ.99VVMayPmtixY7-ne_1tzUDbMch1TOg4-6l2uibuwpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/Review/deleteReview/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Review",
+								"deleteReview",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review - GetUserAverageRate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2MzAwODgyMTMsImV4cCI6MTYzMDA4OTExMywiaWF0IjoxNjMwMDg4MjEzfQ.99VVMayPmtixY7-ne_1tzUDbMch1TOg4-6l2uibuwpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/Review/GetRateAverage/2004",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Review",
+								"GetRateAverage",
+								"2004"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drivers",
+			"item": [
+				{
+					"name": "Drivers - Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2MzAwODkyMDgsImV4cCI6MTYzMDA5MDEwOCwiaWF0IjoxNjMwMDg5MjA4fQ.rjZRC6Jr4d090WaBeMb8-EUj3chEFRtD2vegMsXsiwE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2006,\r\n  \"drivingExperience\": 4,\r\n  \"country\": \"Srbija\",\r\n  \"drivingLicenceFrom\": \"2017-08-27T18:32:13.311Z\",\r\n  \"companyName\": \"CC-Tour\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/Driver/updateProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"Driver",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
