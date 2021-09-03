@@ -1,6 +1,6 @@
 ﻿--Tovar -----
 
-USE [Demo]
+USE [TruckerDb]
 GO
 
 /****** Object:  Table [dbo].[Users]    Script Date: 8/10/2021 10:58:57 PM ******/
@@ -28,7 +28,7 @@ GO
 
 --Tura 
 
-USE [Demo]
+USE [TruckerDb]
 GO
 
 /****** Object:  Table [dbo].[Users]    Script Date: 8/10/2021 10:58:57 PM ******/
@@ -74,7 +74,7 @@ GO
 
 --Review
 
-USE [Demo]
+USE [TruckerDb]
 GO
 
 /****** Object:  Table [dbo].[Users]    Script Date: 8/10/2021 10:58:57 PM ******/
