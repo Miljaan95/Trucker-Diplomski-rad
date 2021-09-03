@@ -9,5 +9,8 @@ namespace AppDemo.Services
     public interface ILoadService
     {
         int CreateLoad(LoadModel model);
+        List<LoadModel> GetLoads();
+        bool UpdateLoad(LoadModel model);
+        bool DeleteLoad(int Id);
     }
 }

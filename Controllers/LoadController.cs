@@ -28,5 +28,32 @@ namespace AppDemo.Controllers
             var res = _loadService.CreateLoad(model);
             return new JsonResult(res);
         }
+
+        [HttpGet("getLoads")]
+        public IActionResult GetLoads()
+        {
+            var loads = _loadService.GetLoads();
+            return Ok(new { loads });
+        }
+
+
+        [HttpPost("updateLoad")]
+        public IActionResult UpdateLoad([FromBody] LoadModel model)
+        {
+            var response = _loadService.UpdateLoad(model);
+            return Ok(response);
+
+        }
+
+        [HttpDelete("deleteLoad/{Id}")]
+        public IActionResult DeleteLoad(int Id)
+        {
+            var load = _loadService.DeleteLoad(Id);
+            if (load == true)
+                return Ok();
+            else
+                return NotFound();
+        }
+
     }
 }

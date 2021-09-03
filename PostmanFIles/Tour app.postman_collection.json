@@ -341,7 +341,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:37507/Load/createLoad",
+							"raw": "http://localhost:37507/LoadController/createLoad",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -350,6 +350,106 @@
 							"path": [
 								"Load",
 								"createLoad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load - GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjE1NDUsImV4cCI6MTYyOTgyMjQ0NSwiaWF0IjoxNjI5ODIxNTQ1fQ.gQilh4MTayXd263_fWMuy-pFnKisTsqd-e8YcwXBNTM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/LoadController/getLoads",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"LoadController",
+								"getLoads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load - Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4Mzk0OTgsImV4cCI6MTYyOTg0MDM5OCwiaWF0IjoxNjI5ODM5NDk4fQ.c3h3pPIHUOJuF38N2TXHjfqPZgT9O-F12OwEu3KohvI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\" : 1, \r\n    \"Weight\": 30,\r\n    \"Height\": 25,\r\n    \"Width\": 40,\r\n    \"Length\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:37507/LoadContoller/updateLoad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"LoadContoller",
+								"updateLoad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load - Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIwMDQiLCJuYmYiOjE2Mjk4MjI1NjgsImV4cCI6MTYyOTgyMzQ2OCwiaWF0IjoxNjI5ODIyNTY4fQ.X8pA9S21JyR65XB09YpcU_GFyLP7euLMWiN2xGz6VLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:37507/LoadContoller/deleteLoad/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "37507",
+							"path": [
+								"LoadContoller",
+								"deleteLoad",
+								"1"
 							]
 						}
 					},
